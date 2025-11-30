@@ -46,7 +46,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        // 소数점
+        // 소수점
         private void DotBtn_Click(object sender, EventArgs e)
         {
             if (_isNewEntry || DisplayText == "Error")
@@ -60,7 +60,7 @@ namespace WindowsFormsApp1
                 DisplayText += ".";
         }
 
-        // 연산자 클릭 (+ - x ÷)
+        // 연산자 
         private void Operator_Click(object sender, EventArgs e)
         {
             var btn = sender as Button;
@@ -70,7 +70,7 @@ namespace WindowsFormsApp1
             _isNewEntry = true;
         }
 
-        // = 처리
+        // 이퀄 처리
         private void EqualBtn_Click(object sender, EventArgs e)
         {
             ApplyPendingOperation();
@@ -131,7 +131,6 @@ namespace WindowsFormsApp1
             _isNewEntry = true;
         }
 
-        // C (전체 초기화)
         private void ClearBtn_Click(object sender, EventArgs e)
         {
             _accumulator = 0.0;
@@ -140,14 +139,14 @@ namespace WindowsFormsApp1
             DisplayText = "0";
         }
 
-        // CE (현재 입력만 초기화)
+        // CE (CE는 현재 입력만 초기화)
         private void CEBtn_Click(object sender, EventArgs e)
         {
             DisplayText = "0";
             _isNewEntry = true;
         }
 
-        // Backspace
+        // 지우기
         private void BackBtn_Click(object sender, EventArgs e)
         {
             if (_isNewEntry || DisplayText == "Error")
@@ -178,7 +177,6 @@ namespace WindowsFormsApp1
                 DisplayText = "-" + DisplayText;
         }
 
-        // % 버튼
         private void PercentBtn_Click(object sender, EventArgs e)
         {
             if (!double.TryParse(DisplayText, NumberStyles.Float, CultureInfo.InvariantCulture, out double current))
